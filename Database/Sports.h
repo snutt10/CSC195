@@ -5,7 +5,7 @@ using namespace std;
 class Sports{
 public:
 	enum class eType {
-		TENNIS = 1,
+		TENNIS = 0,
 		HOCKEY
 	};
 

@@ -1,5 +1,6 @@
 #include "Database.h"
 #include "Tennis.h"
+#include "Hockey.h"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ void Database::Create(Sports::eType type){
         sports = new Tennis;
         break;
     case Sports::eType::HOCKEY:
-        //animal = new Hockey;
+        sports = new Hockey;
         break;
     }
     sports->Read(cout, cin);
@@ -24,19 +25,23 @@ void Database::Create(Sports::eType type){
 }
 
 void Database::DisplayAll(){
-    
+    for (Sports* sp : m_sports) {
+        sp->Write(cout);
+    }
 }
 
 void Database::Display(const string& name){
-    for (Sports* sp : m_sports)
-    {
-        if (sp->GetName() == name)
-        {
+    for (Sports* sp : m_sports){
+        if (sp->GetName() == name){
             sp->Write(cout);
         }
     }
 }
 
-void Database::Display(Sports::eType type)
-{
+void Database::Display(Sports::eType type){
+    for (Sports* sp : m_sports) {
+        if (sp->GetType() == type) {
+            sp->Write(cout);
+        }
+    }
 }
