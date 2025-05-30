@@ -6,6 +6,7 @@ public:
 	~Circle();
 
 	float Area() override;
+	eType GetType() override { return eType::CIRCLE; }
 
 	void SetRadius(float radius) const;
 	float GetRadius();

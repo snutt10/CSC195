@@ -5,6 +5,8 @@ public:
 	Rectangle(float w, float h);
 
 	float Area() override;
+	eType GetType() override { return eType::RECTANGLE; }
+
 
 	void setWidth(float width) const;
 	float getWidth();
