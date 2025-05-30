@@ -18,7 +18,6 @@ int main() {
 
     for (int i = 0; i <= shapes.size(); i++) {
         cout << "Area: " << shapes[i]->Area() << endl;
-        //Create unique way of differentiating between circle and rectangle
         if (shapes[i]->GetType() == circ->GetType() ) {
             cout << "Radius: " << circ->GetRadius() << endl;
         }
@@ -28,9 +27,4 @@ int main() {
         delete sp;
     }
     return 0;
-}
-
-float Shapes::Area()
-{
-    return 0.0f;
 }
